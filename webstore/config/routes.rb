@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   get 'site/about'
-
   get 'site/contact'
   
   
   get '/about' => 'site#about'
-  
   get '/contact' => 'site#contact'
+  
+  get '/Admin' => 'user#admin_login'
+  get '/logout' => 'user#logout'
 
   resources :items
   # The priority is based upon order of creation: first created -> highest priority.
