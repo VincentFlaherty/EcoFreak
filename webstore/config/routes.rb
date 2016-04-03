@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   get 'site/about'
 
   get 'site/contact'
+  
+  
+  get '/about' => 'site#about'
+  
+  get '/contact' => 'site#contact'
 
   resources :items
   # The priority is based upon order of creation: first created -> highest priority.
