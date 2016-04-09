@@ -24,8 +24,8 @@
         </div>
     </td>
     <td class="title"><%= link_to item.title, item %></td>
-    <td class="price"><%= number_to_currency(item.price) %></td>
-    <td class="quantity"><%= quantity %><br></td>
+    <td class="price"><%= number_to_currency(item.price, :unit => "€") %></td>
+    <td class="quantity"><%= quantity %><br><a href="/cart/<%= item.id %>">More</a><br><a href="/cart/subtract/<%= item.id %>">Less</a><br></td>
     <td class="price"><%= number_to_currency(quantity * item.price, :unit => "€" )%></td>
     </tr>
     <% total += quantity * item.price %>
@@ -41,9 +41,9 @@
 </tr>
 </table>
 
-<p>
+<p><br>
     <%= link_to 'Continue Shopping', :controller => :items %>
-    <br><br>
+    <br>
     <a href="/cart/clear">Clear Items</a>
 
 </p>

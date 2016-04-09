@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>EcoFreak</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,34 +11,43 @@
   <div id='header'>
     <!-- Header image displays here -->
   </div>
-  <div id='menu'>
-    <div id='navbar'>
-      <ul>
-        <li><a href="/items">Products</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-        <li><a href="/Admin">Login</a></li>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Cart</a></li>
+        <% if session[:login] == 1 %>
         <li><a href="/logout">Logout</a></li>
+        <% else%>
+        <li><a href="/Admin">Login</a></li>
+        <% end %>
       </ul>
     </div>
-  </div>  
-  <div id='container'>
-    <div id='content'>
-      <p class="notice"><%= flash[:notice] %></p>
+  <!-- <div id='menu'> -->
+    
+<div id = row>
+	<div class="col-sm-2">
+    	<div id='navbar1'>
+      		<ul>
+        	<li><a href="/items">Shop</a></li>
+        	<li><a href="/about">About Us</a></li>
+        	<li><a href="/contact">Contact Us</a></li>
+        	<li><a href=#>Philosophy</a></li>
+        	<li><a href=#>T & C</a></li>
+      		</ul>
+    	</div>
+  	</div>
+  <div class="col-sm-8">
+  	<div id='container'>
+    	<div id='content'>
+      	<p class="notice"><%= flash[:notice] %></p>
         <%= yield %>
-    </div>
-    <div id='first-column'>
-      <div class="loginbox">
-        <h2 class="BoxHeaders">Login Here</h2>
-      </div>
-      <div class="searchbox">
-        <h2 class="BoxHeaders">Search Catalogue</h2>
-      </div>
-    </div>
+    	</div>
+	</div>
   </div>
-  <div id='footer'>
+  <div class="col-sm-2">
+  </div>
+  <!-- <div id='footer'>
     <h6 class="footertext">&copy; EcoFreak WebStore &trade; 2016</h6>
-  </div>
+  </div> -->
 
 </body>
 </html>

@@ -2,14 +2,17 @@
 <br>
 <table class="catalog">
   
-<% @items.each do |item| %>
+<% @items.in_groups_of(2,false) do |row_items| %>
       <tr>
+         <% for item in row_items %>
         <td>
+          <td class = "col-sm-1">
           <div class="image">
             <%= link_to (image_tag item.image_url, :style => "height:100px"), item %>
           </div>
         </td>
         <td>
+          <td class = "col-sm-3">
           <div class="title">
             <%= link_to item.title, item %>
           </div>
@@ -28,8 +31,11 @@
               <a href="/cart/<%= item.id %>">Add to cart</a><br><br>
             <% end%>
             
+            
+            
           </div>
         </td>
+         <% end %>
       </tr>
     <% end %>
 </table>

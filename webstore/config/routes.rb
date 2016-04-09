@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
+  get '/cart/subtract/:id' => 'cart#subtract'
 
   resources :items
   # The priority is based upon order of creation: first created -> highest priority.

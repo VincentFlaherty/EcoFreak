@@ -1,4 +1,34 @@
 class CartController < ApplicationController
+  
+  def subtract
+    #get the ID of the product
+    id = params[:id]
+
+    
+    #if the cart has already been created, use existing cart
+    #else create a blank cart
+    if session[:cart] then
+      cart = session[:cart]
+    else
+      session[:cart] = {}
+      cart = session[:cart]
+    end
+    
+    # if the product has already been added to the cart, increment the value
+    # else set the value to 1
+    if cart[id] then
+     cart[id] = cart[id] - 1
+    end
+    
+    if cart[id] == -1
+      cart[id] = 0
+    end
+      
+    #redirect to the cart display page
+    redirect_to :action =>  :index 
+    
+  end
+  
   def add
     #get the id of the product
     id = params[:id]
