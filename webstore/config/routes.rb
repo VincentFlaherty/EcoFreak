@@ -14,12 +14,13 @@ Rails.application.routes.draw do
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id' => 'cart#add'
   get '/cart/subtract/:id' => 'cart#subtract'
+  get '/cart/checkout' => 'cart#checkout'
 
   resources :items
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site routed with "root"r
    root 'items#index'
 
   # Example of regular route:

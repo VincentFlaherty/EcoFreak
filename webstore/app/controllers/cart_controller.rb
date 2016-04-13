@@ -1,5 +1,9 @@
 class CartController < ApplicationController
   
+  def checkout
+  
+  end
+  
   def subtract
     #get the ID of the product
     id = params[:id]

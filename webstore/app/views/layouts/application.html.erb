@@ -11,9 +11,9 @@
   <div id='header'>
     <!-- Header image displays here -->
   </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Cart</a></li>
+        <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart </span></a></li>
         <% if session[:login] == 1 %>
         <li><a href="/logout">Logout</a></li>
         <% else%>

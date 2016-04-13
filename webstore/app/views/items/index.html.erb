@@ -27,6 +27,7 @@
             <% if session[:login] == 1 %>
             <%= link_to 'Edit', edit_item_path(item) %> |
             <%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %>
+            <p></p>
             <% else %>
               <a href="/cart/<%= item.id %>">Add to cart</a><br><br>
             <% end%>

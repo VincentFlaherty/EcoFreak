@@ -15,8 +15,10 @@
         <td class="legend">Total</td>
     </tr>
     
+    
     <% @cart.each do |id, quantity | %>
     <% item = Item.find_by_id(id) %>
+    
     <tr>
     <td>
         <div class="image">
