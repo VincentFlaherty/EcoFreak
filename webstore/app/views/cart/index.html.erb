@@ -1,6 +1,6 @@
 <h1>Your Cart</h1><br>
 
-<% if @cart.empty? %>
+<% if $cart.empty? %>
     <p>Your cart is empty!</p>
 <% end %>
 
@@ -16,7 +16,7 @@
     </tr>
     
     
-    <% @cart.each do |id, quantity | %>
+    <% $cart.each do |id, quantity | %>
     <% item = Item.find_by_id(id) %>
     
     <tr>
@@ -47,5 +47,7 @@
     <%= link_to 'Continue Shopping', :controller => :items %>
     <br>
     <a href="/cart/clear">Clear Items</a>
+    <br>
+    <a href="/cart/checkout">Checkout</a>
 
 </p>

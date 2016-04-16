@@ -1,0 +1,19 @@
+
+<% total = 0 %>
+<% quantity = 0%>
+<% tquantity = 0%>
+  <% if $cart.nil? %>
+    <% total = 0%>
+    <%tquantity =0 %>
+  <% elsif !$cart.empty? %>
+          <% $cart.each do |id, quantity | %>
+            <% item = Item.find_by_id(id) %>
+            <% total += quantity * item.price %>
+            <% tquantity += quantity %>
+          <% end %>
+  <% end %>
+
+ 
+    
+<%= link_to "#{tquantity} Items in Cart ( #{number_to_currency total, :unit => "€"} )", cart_path, class: "btn btn-link" %>
+

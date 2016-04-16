@@ -1,7 +1,9 @@
 class CartController < ApplicationController
   
   def checkout
-  
+  # Code to capture cart
+  # Write to Database
+  # Bring capture total and send to payment processing (Stripe)
   end
   
   def subtract
@@ -69,9 +71,9 @@ class CartController < ApplicationController
     #if there is a cart, pass it to the page for display
     #else pass on an empty value
     if session[:cart] then
-      @cart = session[:cart]
+      $cart = session[:cart]
     else
-      @cart = {}
+      $cart = {}
     end
   end
   

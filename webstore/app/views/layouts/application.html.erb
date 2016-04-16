@@ -13,7 +13,7 @@
   </div>
   <div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span>Cart </span></a></li>
+        <li><%= render 'cart/cart_text' %></li>
         <% if session[:login] == 1 %>
         <li><a href="/logout">Logout</a></li>
         <% else%>
