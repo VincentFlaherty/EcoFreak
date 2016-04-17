@@ -9,6 +9,11 @@ class UserController < ApplicationController
         redirect_to :controller => :items
     end
     
+    def user_login
+        redirect_to :controller => :user_login
+    end
+        
+    
     def logout
         session[:login] = nil
         session[:cart] = nil
@@ -17,8 +22,7 @@ class UserController < ApplicationController
     end
 
 
-
-
+ 
 
 
 end

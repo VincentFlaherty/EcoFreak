@@ -1,7 +1,4 @@
 class SiteController < ApplicationController
-  def about
-  end
-
-  def contact
+  def welcome
   end
 end

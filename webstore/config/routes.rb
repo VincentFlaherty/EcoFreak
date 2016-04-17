@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'site/welcome'
+  get '/welcome' => 'site#welcome'
+
+  devise_for :users
   get 'cart/index'
 
   get 'site/about'
@@ -15,6 +19,8 @@ Rails.application.routes.draw do
   get '/cart/:id' => 'cart#add'
   get '/cart/subtract/:id' => 'cart#subtract'
   get '/cart/checkout' => 'cart#checkout'
+  
+  get 'user/user_register' => 'user#user_register'
 
   resources :items
   # The priority is based upon order of creation: first created -> highest priority.
