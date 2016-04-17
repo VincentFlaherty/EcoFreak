@@ -1,5 +1,8 @@
 class UserController < ApplicationController
-    def login
+
+    def user_register
+        redirect_to :controller => :user_register
+        flash[:notice] = "Please enter your details:"
     end
     
     def admin_login
@@ -12,7 +15,7 @@ class UserController < ApplicationController
     def user_login
         redirect_to :controller => :user_login
     end
-        
+    
     
     def logout
         session[:login] = nil
